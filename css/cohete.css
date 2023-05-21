@@ -1,0 +1,45 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.scene{
+    position: relative;
+    width: 170px;
+    height: 300px;
+    background-color: black;
+    overflow: hidden;
+    display: flex;
+    justify-content:  center;
+    align-items: center;
+}
+
+.scene .cohete{
+    position: relative;
+    animation: animate 0.2s ease infinite;
+
+}
+
+@keyframes animate
+{
+    0%,100%
+    {
+        transform: translatey(-2px)
+    }
+    50%
+    {
+        transform: translatey(2px)
+    }
+}
+
+.scene .cohete::before{
+    content: '';
+    position: absolute;
+    bottom: -200px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 10px;
+    height: 200px;
+    background: linear-gradient(#ff8800,transparent);
+}
+

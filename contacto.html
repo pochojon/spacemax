@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, user-scalable=no,initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" >
+    <title>Spac/Max</title>
+    <script src="https://kit.fontawesome.com/ae62f2f4bd.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+
+<body>
+
+  
+
+    <div class="padre">
+        <header class="header">
+            <div id="idmenu">
+  
+            </div>
+            <div class="texto-principal">
+                <h1>Contanos QUE y DONDE queres buscar <br> Nosotros nos ocupamos de COMO encontralo </h1>
+            </div>
+            <form action="" id="formcontacto" method="get">
+                <div class="formuppal" >
+                      <fieldset>
+                          <legend>Datos de contacto</legend>
+                           <label for="name">Nombre: </label>
+                           <input size="55" type="text" name="name" id="name" required
+                           placeholder="Ingrese su nombre aqui..."> <br><br>
+                           <div class="error-message" id="name-error"></div>
+                           
+                            <label for="email">Mail      :</label>
+                            <input size="55 type="email" name="email" id="email" required> <br><br>
+                            <div class="error-message" id="email-error"></div>
+
+                            <div class="sexo">
+                            <span>Sexo</span>
+                             <input type="radio" name="gender" value="hombre" checked>Hombre
+                             <input type="radio" name="gender" value="Mujer">Mujer
+                             <input type="radio" name="gender" value="Otro"> Otro
+                            </div>  
+                          <br><br>
+
+                           <label for="operaciontipo">Tipo de Propiedad</label>
+                           <select name="operaciontipo" id="operaciontipo">
+                            <option value="Todos">Todos</option>
+                            <option value="Venta">Venta</option>
+                            <option value="Alquiler">Alquiler</option>
+                           </select>
+                          <label for="propiedadtipo">Tipo de Propiedad</label>
+                          <select name="propiedadtipo" id="propiedadtipo">
+                            <option value="Todos">Todos</option>
+                            <option value="Domo">Domo</option>
+                            <option value="Villa">Villa</option>
+                            <option value="Condo">Condo</option>
+                           </select>
+                    
+                          <label for="planeta">Planeta</label>
+                           <select name="planeta" id="planeta">
+                            <option value="Todos">Todos</option>
+                            <option value="Marte">Marte</option>
+                            <option value="Luna">Luna</option>
+                            <option value="Saturno">Saturno</option>
+                            <option value="Urano">Urano</option>
+                            <option value="Neptuno">Neptuno</option>
+                            <option value="Pluton">Pluton</option>
+                            <option value="Venus">Venus</option>
+                            <option value="Jupiter">Jupiter</option>
+                          </select>
+
+                          <br>
+
+                          <label for="message">Tu cnsulta:</label>
+                          <textarea id="message" required></textarea>
+                          <div class="error-message" id="message-error"></div>
+
+                           
+                          <br>
+                          <br>
+                           <input type="submit" id="botoncontacto" name="btn" value="Enviar Datos">
+
+                        </fieldset>
+                </div>
+            </form>
+            <br>
+
+        </header>
+
+   
+        
+    </div>
+    <div id="idfooter">
+    </div>
+    <script src="js/headerfooter.js"></script>
+    <script src="js/contacto.js"></script>
+</body>
+
+</html>

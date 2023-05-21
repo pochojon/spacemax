@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="demo">
+        <span id="temperaturaactual"> </span>
+        <br>
+        <span id="velocidadviento"> </span>
+        <br>
+        <span id="hoy"> </span> <span id="hoyminima"> </span><span id="hoymaxima"> </span>
+        <br>
+        <span id="manana"> </span> <span id="mananaminima"> </span><span id="mananamaxima"> </span>
+        <br>
+        <span id="pasadomanana"> </span> <span id="pasadomananaminima"> </span><span id="pasadomananamaxima"> </span>
+        <br>
+
+    </p>
+    <script>
+        // consumo de API ope-meteo.com
+        var txt = ""
+        fetch("https://api.open-meteo.com/v1/forecast?latitude=52.52&longitude=13.41&timezone=America/Argentina/Buenos_Aires&current_weather=true&daily=apparent_temperature_min&daily=apparent_temperature_max")
+.then(response => response.text())      
+     .then(json => {                    
+          //parseo lo que devuelve la api del tiempo para la ciudad de Buenos Aires y me quedo con los datos de temperatura de hoy, 24 y 48 hs
+          txt = JSON.parse(json); 
+          console.log(txt.current_weather.temperature)
+          console.log(txt.current_weather.windspeed)
+          console.log(txt.daily.time[1])
+          console.log(txt.daily.apparent_temperature_min[0])
+          console.log(txt.daily.apparent_temperature_max[0])
+
+          // lleno los valores segun vector diasemana con sus temperaturas minimnas y maximas
+          const diassemana = ['lunes','martes','miércoles','jueves', 'viernes','sabado','domingo']
+          document.getElementById("temperaturaactual").innerHTML = "Temperatura actual: "+txt.current_weather.temperature
+          document.getElementById("velocidadviento").innerHTML = "Velocidad del viento: "+txt.current_weather.windspeed
+          
+          document.getElementById("hoy").innerHTML = "Hoy "+ diassemana[new Date(txt.daily.time[0]).getDay()].toUpperCase()
+          document.getElementById("hoyminima").innerHTML = "Minima: "+txt.daily.apparent_temperature_min[0]
+          document.getElementById("hoymaxima").innerHTML = "Maxima: "+txt.daily.apparent_temperature_max[0]
+  
+          document.getElementById("manana").innerHTML = diassemana[new Date(txt.daily.time[1]).getDay()].toUpperCase()
+          document.getElementById("mananaminima").innerHTML = "Minima: "+txt.daily.apparent_temperature_min[1]
+          document.getElementById("mananamaxima").innerHTML = "Maxima: "+txt.daily.apparent_temperature_max[1]
+   
+          document.getElementById("pasadomanana").innerHTML = diassemana[new Date(txt.daily.time[2]).getDay()].toUpperCase()
+          document.getElementById("pasadomananaminima").innerHTML = "Minima: "+txt.daily.apparent_temperature_min[2]
+          document.getElementById("pasadomananamaxima").innerHTML = "Maxima: "+txt.daily.apparent_temperature_max[2]
+
+
+     })
+     .catch(error => {                  // 3
+          // handle error
+     });
+
+
+    </script>
+</body>
+</html>

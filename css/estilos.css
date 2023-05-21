@@ -1,0 +1,615 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Share Tech Mono', monospace;
+}   
+a {
+text-decoration: none;
+}
+
+
+
+/* INICIO nosotros.html clima*/
+.clima {
+    display: flex;
+    height: 80vh;
+    justify-content: center;
+    align-items: center;
+}
+.clima-card{
+    margin-right: 10px;
+    position: relative;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 80%;
+    height: 90%;
+    padding: 20px;
+    border-radius: 20px;
+    font-family: 'Share Tech Mono', monospace;
+    
+      
+}
+.clima-card img {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    width: 120px;
+    opacity: .8;
+}
+.clima-card span {
+    font-size: 17px;
+}
+.clima card h2 {
+    font-size: 100px; 
+}
+
+hr {opacity: 0.2;}
+
+#despejado {
+    background-image: linear-gradient(
+        to bottom, #E0EAFC , #CFDEF3
+    );
+    color: darkslategray;
+}
+
+#nublado {
+    background-image: linear-gradient(
+        to bottom, #373844 , #4286f4
+    );
+    color: whitesmoke;
+}
+#lluvia {
+    background-image: linear-gradient(
+        to bottom, #1f2b47 , #c4d7f7
+    );
+    color: white;
+}
+
+/* FIN nosotros.html clima*/
+
+/* footer*/
+.footer-distributed {
+    background-color: #000;
+    box-sizing: border-box;
+    widows: 100%;
+    text-align: left;
+    font: bold 16px  'Share Tech Mono', monospace;
+    padding: 50px 50px 60px 50px;
+    margin-top: 0px;
+}
+
+.footer-distributed .footer-left, .footer-distributed .footer-center, .footer-distributed .footer-right {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.footer-distributed .footer-left {
+    width: 30%;
+}
+
+.footer-distributed h3 {
+    color: white;
+    font-size: 30px;
+    /*color: #fff;
+    font: normal 36px 'Roboto', cursive;*/
+    margin: 0;
+}
+.footer-distributed h3 span{
+    /*color:#99cfe4;*/
+    color: white;
+}
+.footer-distributed .footer-links{
+    color:#fff;
+    margin: 20px 0 12px;
+}
+.footer-distributed .footer-links a{
+    display:inline-block;
+    line-height: 1.8;
+    text-decoration: none;
+    color: inherit;
+}
+.footer-distributed .footer-company-name{
+    color:#99cfe4;
+    font-size: 14px;
+    font-weight: normal;
+    margin: 0;
+}
+.footer-distributed .footer-center{
+    width: 35%;
+}
+.footer-distributed .footer-center i{
+    background-color: #0a0a0e; 
+    color:#fff;
+    font-size: 25px;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 42px;
+    margin:10px 15px;
+    vertical-align: middle;
+}
+.footer-distributed .footer-center i.fa.envelope{
+    font-size: 17px;
+    line-height: 38px;
+}
+.footer-distributed .footer-center p{
+    display: inline-block;
+    color:#fff;
+    vertical-align: middle;
+    margin:0;
+}
+.footer-distributed .footer-center p span{
+    display: block;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 2;
+}
+.footer-distributed .footer-center p a {
+    color:#99cfe4;
+    text-decoration: none;
+}
+.footer-distributed .footer-right{
+    width: 30%;
+}
+.footer-distributed .footer-company-about{
+    line-height: 20px;
+    color:#fff;
+    font-size: 13px;
+    font-weight: normal;
+    margin: 0;
+}
+.footer-distributed .footer-company-about span{
+    display: block;
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+.footer-distributed .footer-icons a{
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+    background-color: #0a0a0e;
+    border-radius: 2px;
+    color:#fff;
+    text-align: center;
+    line-height: 35px;
+    margin-right: 3px;
+    margin-bottom: 5px;
+}
+.footer-distributed .footer-icons a:hover{
+    background-color: #99cfe4;
+}
+.footer-links a:hover{
+    color:#99cfe4;
+}
+
+/* FIN footer*/
+
+/* propiedades */
+.contenedor-propiedades{
+    
+    width: 100%;
+    margin: auto;
+    margin: 0 auto;
+    display: grid;
+    gap:  10px;
+    
+}
+.card-imgprop{
+    height: 270px;
+    width: 100%;
+    object-position: 50% 50%;
+    object-fit: cover;
+}
+.card-tipoprop{
+    text-align: center;
+    margin: 0;
+}
+.card-descprop{
+    flex-grow: 1;
+}
+.card-imgprop img{
+    border-radius: 10px 10px 0 0;
+}
+.card-bprop{
+    border-radius: 0 0 10px 10px;
+    background-color: rgb(19, 25, 57);
+    color: white;
+    padding: 5px 15px;
+    text-align: justify;
+    border: 1px solid #ccc;
+}
+.hplaneta {
+    display: block;
+    background: rgba(0,0,0,.6);
+    padding: 5px;
+    text-decoration: none;
+    color: #fff;
+    text-align: center;
+    margin-top: 10px;
+}
+.hoperacion {
+    display: block;
+    background: rgba(0,0,0,.6);
+    padding: 5px;
+    text-decoration: none;
+    color: #fff;
+    text-align: center;
+    margin-top: 10px;
+}
+
+
+
+/* fin propiedades */
+
+
+
+
+.padre{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    /*flex-flow: column nowrap;*/
+}
+    .header {
+        background: url(../img/planetas2.jpg);
+        background-position: center;
+        background-attachment: contain;
+        background-size: cover;;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        /*flex-flow: column nowrap;*/
+    } 
+        #idmenu{
+            background: rgba(0,0,0,.6);
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            /*flex-flow: column nowrap;*/
+            height: 70px;
+            align-items: center;
+        }
+                .animacohete{
+                    position: relative;
+                    margin-top: 60px;
+                    padding-top: 10px;
+                    width: 100px;
+                    height: 120px;
+                    background-color: black;
+                    overflow: hidden;
+                    display: flex;
+                    justify-content:  center;
+                    align-items: center;
+                }
+                
+                .animacohete .cohete{
+                    position: relative;
+                    animation: animate 0.2s ease infinite;
+                
+                }
+                
+                @keyframes animate
+                {
+                    0%,100%
+                    {
+                        transform: translatey(-2px)
+                    }
+                    50%
+                    {
+                        transform: translatey(2px)
+                    }
+                }
+                
+                
+                .logo{
+                    /*background: coral;*/
+                    flex: 1 1 auto;
+                    /*height: 30px;*/  
+                }
+                    .logo a {
+                        color: white;
+                        font-size: 30px;
+                    }
+                    .logo a:hover {
+                        color: rgb(102, 100, 100);
+                    }
+            .nav{
+                /*background: coral;*/
+                flex: 1 1 auto;
+            }
+                .nav a{
+                    color: white;
+                    font-size: 20px;
+                    padding: 0 10px;;
+                }
+                .nav a:hover {
+                    color: rgb(102, 100, 100);
+                }
+
+            
+
+        .texto-principal{
+            /*background: orange;*/
+            background: rgba(0,0,0,.3);
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+            h1{
+                /*background:skyblue;*/
+                font-size: 25px;
+                color: white;
+                font-weight: 1000;
+                text-align: center;
+                line-height: 1.6;
+                
+                
+            }
+        .formuppal{
+            /*background: rgb(211, 15, 15);*/
+            background: rgba(0,0,0,.3);
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            
+        }
+     
+
+    
+
+        .formuppal legend{
+            /*background:skyblue;*/
+            font-size: 20px;
+            color: white;
+            font-weight: 800;
+            text-align: center;
+            line-height: 2;
+
+        }  
+
+        .formuppal label{
+            /*background:skyblue;*/
+            padding:  20px;
+            font-size: 17px;
+            color: white;
+            font-weight: 800;
+            text-align: center;
+            line-height: 1.6;
+
+        }   
+        .formuppal button{
+            /*background:skyblue;*/
+            padding:  10px;
+            margin-bottom: 10px;
+            margin-right: 10px;
+            font-size: 17px;
+            color: black;
+            font-weight: 800;
+            text-align: center;
+            line-height: 1.6;
+
+        }
+        .error-message{
+            padding:  20px;
+            font-size: 17px;
+            color: white;
+            font-weight: 800;
+            text-align: left;
+            line-height: 1.6;
+        }
+        .sexo{
+            padding:  20px;
+            font-size: 17px;
+            color: white;
+            font-weight: 800;
+            text-align: left;
+            line-height: 1.6;  
+        }   
+        .formuppal select {
+            background: rgba(0,0,0,.5);
+
+            font-size: 17px;
+            color: white;
+            font-weight: 300;
+            /*text-align: center;*/
+            line-height: 1.6;
+        } 
+        .formuppal input{
+            background: white;
+
+            font-size: 17px;
+            color: black;
+            font-weight: 300;
+            /*text-align: center;*/
+            line-height: 1.6;
+            padding: 5px ;
+
+        }
+        .formuppal textarea{
+            background: white;
+            width: 80%;
+            height: 100px;
+            margin-top: 10px;
+            line-height: 1.6;
+            font-size: 17px;
+        } 
+       #botoncontacto {
+           margin-left: 40%;
+           margin-bottom: 20px;
+        } 
+
+        .header-nosotros {
+            background: url(../img/planetas.jpg);
+            background-position: center;
+            background-attachment: contain;
+            background-size: cover;;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: nowrap;
+            /*flex-flow: column nowrap;*/
+        } 
+        
+        .nosotros-principal{
+            /*background: orange;*/
+            background: rgba(0,0,0,.3);
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+            .nosotros-principal h1{
+                /*background:skyblue;*/
+                margin-top: 7%;
+                font-size: 30px;
+                color: white;
+                font-weight: 800;
+                text-align: center;
+                line-height: 1.6;
+                
+                
+            }
+            .nosotros-secundario{
+                /*background: orange;*/
+                background: rgba(0,0,0,.3);
+                height: 400px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            
+                .nosotros-secundario h2{
+                    /*background:skyblue;*/
+                    margin-top: 5%;
+                    font-size: 20px;
+                    color: white;
+                    font-weight: 800;
+                    text-align: center;
+                  
+                    
+                    
+                }
+
+                #propiedades{
+                    background:rgb(26, 26, 27);
+                    flex: 2 1 auto;
+                    display: flex;
+                    /*flex-flow: row wrap;*/
+                    flex-wrap: wrap;
+                }   
+
+    .section{
+        background: #000;
+        display: flex;
+        height: 70vh;
+    }
+        .articulos{
+            background:rgb(26, 26, 27);
+            flex: 2 1 auto;
+            display: flex;
+            /*flex-flow: row wrap;*/
+            flex-wrap: wrap;
+        }   
+            .article{
+                /*background:darkblue;*/
+                flex: 1 1 40%;
+                color: white;   
+                font-size: 13px;
+                margin: 5px 10px 20px 0px;
+                flex: 1 1 10%;
+            }
+            .article img{
+                width: 100%;
+            }
+            h3{
+              color: white;
+              font-size: 17px;  
+              padding: 20px 0;
+              margin-top: -100px;
+            }
+            h2{
+                color: white;
+                font-size: 20px;  
+                padding: 0px 0 20px 0;
+                
+            }
+  
+ 
+
+    
+        .direcciones{
+            background:rgb(26, 26, 27);
+            flex: 2 1 auto;
+            display: flex;
+            flex-flow: row wrap;
+        }
+            .sucursales{
+                background:rgb(0, 0, 10);
+                flex: 1 1 40%;
+                color: white;   
+                font-size: 20px;
+                margin: 5px 10px 20px 0px;
+                flex: 1 1 10%;
+            }
+            
+    
+        
+
+
+
+
+        
+/*De 601 a 800px*/
+@media all and (max-width: 800px){
+/*El aside debe pasar hacia abajo*/
+    .section{
+        flex-direction: column;
+    }
+/*Los elementos del menu deben mostrarse uno debajo del otro*/
+    .menu{
+        flex-direction: column;
+        height: auto;
+    }
+
+
+
+/*De 401 a 600px*/
+@media all and (max-width: 600px){
+    .articulos{
+        flex-direction: column;
+    }
+    .direcciones{
+        flex-direction: column;
+   
+    }
+
+}
+    /*Los elementos del menu deben mostrarse uno debajo del otro*/
+    .formuppal{
+        flex-direction: column;
+        height: auto;
+    }
+/*De 0 a 400px*/
+@media all and (max-width: 400px){
+    .aside{
+        flex-direction: column;
+
+    }
+    .formuppal{
+        flex-direction: column;
+        height: auto;
+    }
+
+}
+
+
