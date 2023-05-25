@@ -1,7 +1,7 @@
 let spmxmenu=`
         <div class="animacohete">   
             <div class="cohete">
-                <img src="img/mediumspacemax.png" alt="LOGO SPACE/MAX">
+                <img src="img/spmax70.png" alt="LOGO SPACE/MAX">
             </div>
         </div>
         <div class="logo" >
@@ -11,9 +11,9 @@ let spmxmenu=`
         </div>
 
         <div class="nav">
-            <a href="nosotros.html"><i class="fa-solid fa-user-tie"></i>Nosotros</a>
-            <a href="propiedades.html"><i class="fa-solid fa-building"></i>Propiedades</a>
-            <a href="contacto.html"><i class="fa-solid fa-address-card"></i>Contacto</a>
+            <a href="nosotros.html"><i class="fa-solid fa-user-tie"></i> Nosotros</a>
+            <a href="propiedades.html"><i class="fa-solid fa-building"></i> Propiedades</a>
+            <a href="contacto.html"><i class="fa-solid fa-address-card"></i> Contacto</a>
         </div>
 
 `
@@ -38,39 +38,38 @@ let spmxfooter=`
             |    
         </p>
 
-        <p class="footer-company-name"> Todos los derechos reservados. @2023 <strong>Space/Max</strong></p>
-    </div>
-
-    <div class="footer-center">
+        </div>
+        
+        <div class="footer-center">
         <div>
-            <i class="fa fa-map-marker"></i>
-            <p><span>En el lugar del universo que nos necesites <br> alli estamos</span></p>
+        <i class="fa fa-map-marker"></i>
+        <p><span>En el lugar del universo que nos necesites <br> alli estamos</span></p>
         </div>
         <div>
             <i class="fa fa-phone"></i>
             <p>+VMJS2023 49658 6548</p>
-        </div>
+            </div>
         <div>
-            <i class="fa fa-envelope"></i>
+        <i class="fa fa-envelope"></i>
             <p><a href="#">spacemax@universo.com</a></p>
-        </div>                
+            </div>                
     </div>
 
     <div class="footer-right">
         <p class="footer-company-about">
             <span>Sobre Nosotros</span>
-            <strong>Space/Max</strong> es una compañia inmobiliaria con mas de 1500 años de experiencia
-        </p>
-        <div class="footer-icons">
+            <strong>Space/Max</strong> es una compañia inmobiliaria con mas <br>de 1500 años de experiencia
+            </p>
+            <div class="footer-icons">
             <a href="https://es-la.facebook.com/" target="_blank" ><i class="fa fa-facebook"></i></a>
             <a href="https://www.instagram.com/" target="_blank"><i class="fa fa-instagram"></i></a>
             <a href="https://twitter.com/?lang=es" target="_blank"><i class="fa fa-twitter"></i></a>
-            <a href="https://www.youtube.com/"><i target="_blank" class="fa fa-youbte"></i></a>
-        </div>
-    </div>
-
-</footer>
-
+            </div>
+            </div>
+            
+            
+            </footer>
+            
 
 `
 

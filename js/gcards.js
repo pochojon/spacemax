@@ -7,7 +7,7 @@ var inmuebles = [
         planeta: "Marte",
         cplaneta: "2",
         operacion: "Venta",
-        descripcion: "3 ambientes <br>2 baños <br> Central Termonuclear propia <br>Pantalla Solar"
+        descripcion: "3 ambientes <br>2 baños <br> Central Termonuclear propia"
     },
     {
         codigo: "spmx2",
@@ -43,7 +43,7 @@ var inmuebles = [
         planeta: "Jupiter",
         cplaneta: "9",
         operacion: "Alquiler",
-        descripcion: "2 ambientes <br>1 baño <br>Pileta regulada por electrolisis <br>Generador termoeléctrico"
+        descripcion: "2 ambientes <br>1 baño <br>Pileta propia"
     },
     {
         codigo: "spmx6",
@@ -52,7 +52,7 @@ var inmuebles = [
         planeta: "Saturno",
         cplaneta: "4",
         operacion: "Venta",
-        descripcion: "6 ambientes <br>4 baños <br>Acumuladores de baterías <br>Atmósfera artificial"
+        descripcion: "6 ambientes <br>4 baños <br>Acumuladores de baterías"
     },
     {
         codigo: "spmx7",
@@ -61,7 +61,7 @@ var inmuebles = [
         planeta: "Luna",
         cplaneta: "3",
         operacion: "Venta",
-        descripcion: "6 ambientes <br>4 baños <br>Paneles Solares <br>Atmósfera artificial"
+        descripcion: "6 ambientes <br>4 baños <br>Paneles Solares"
     },
     {
         codigo: "spmx8",
@@ -125,7 +125,7 @@ var inmuebles = [
         planeta: "Marte",
         cplaneta: "2",
         operacion: "Alquiler",
-        descripcion: "2 ambiente <br>2 baño <br>Vistas 360 grados en todos los ambientes"
+        descripcion: "2 ambiente <br>2 baño <br>Vistas 360°"
     },
     {
         codigo: "spmx16",
@@ -134,7 +134,7 @@ var inmuebles = [
         planeta: "Luna",
         cplaneta: "2",
         operacion: "Venta",
-        descripcion: "1 ambiente <br>1 baños <br>Reserva natural interna. Paneles solares propios"
+        descripcion: "1 ambiente <br>1 baños <br>Reserva natural interna"
     },
     {
         codigo: "spmx17",
@@ -152,7 +152,7 @@ var inmuebles = [
         planeta: "Jupiter",
         cplaneta: "2",
         operacion: "Venta",
-        descripcion: "3 ambiente <br>3 baños <br>Tanquies reservorios de agua propia"
+        descripcion: "3 ambiente <br>3 baños <br>Tanques reservorios"
     },
     {
         codigo: "spmx11",
