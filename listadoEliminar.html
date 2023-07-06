@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baja de Propiedades del Catalogo</title>
+    <script src="https://kit.fontawesome.com/ae62f2f4bd.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech&family=Share+Tech+Mono&display=swap"
+        rel="stylesheet">
+    <link rel="shortcut icon" href="img/spmax70.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/estilostpf.css">
+</head>
+
+<body>
+
+    <div class="padre">
+        <header class="header">
+            <div id="idmenu">
+            </div>
+
+            <div class="texto-principal">
+                <h1>Baja de Propiedades del Catalogo</h1>
+            </div>
+            
+    <table id="listaprop">
+        <thead>
+            <tr>
+                <th align="left">Código</th>
+                <th align="left">Nombre</th>
+                <th align="left">Planeta</th>
+                <th align="left">Operacion</th>
+                <th align="left">Descripción</th>
+                <th align="right">Cantidad</th>
+                <th align="right">Precio</th>
+                <th align="right">Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr v-for="propiedad in propiedades">
+                <td>{{ propiedad.codigo }}</td>
+                <td>{{ propiedad.nombre }}</td>
+                <td>{{ propiedad.planeta }}</td>
+                <td>{{ propiedad.operacion }}</td>
+                <td>{{ propiedad.descripcion }}</td>
+                <td align="right">{{ propiedad.cantidad }}</td>
+                <td align="right">{{ propiedad.precio }}</td>
+                <td align="right"><button @click="eliminarPropiedad(propiedad.codigo)">Eliminar</button></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="contenedor-centrado">
+        <a href="tpofinal.html">Volver</a>
+    </div>
+
+    <script src="https://unpkg.com/vue@next"></script>
+    <script>
+        const app = Vue.createApp({
+            data() {
+                return {
+                    propiedades: []
+                }
+            },
+            methods: {
+                obtenerPropiedades() {
+                    const URL = "https://tpofspacemax.pythonanywhere.com/"
+
+fetch(URL + 'propiedades')
+    .then(response => {
+        if (response.ok) {
+            return response.json()
+        } else {
+            throw new Error('Error al obtener las propiedades.')
+        }
+    })
+    .then(data => {
+        this.propiedades = data
+    })
+    .catch(error => {
+        console.log('Error:', error)
+        alert('Error al obtener las propiedades.')
+    })
+},
+eliminarPropiedad(codigo) {
+const URL = "https://tpofspacemax.pythonanywhere.com/"
+
+fetch(URL + `propiedades/${codigo}`, { method: 'DELETE' })
+    .then(response => {
+        if (response.ok) {
+            // Eliminar la propiedad de la lista después de eliminarlo en el servidor
+            this.propiedades = this.propiedades.filter(propiedad => propiedad.codigo !== codigo)
+            console.log('Propiedad eliminada correctamente.')
+        }
+    })
+    .catch(error => {
+        console.log('Error:', error)
+        alert('Error al eliminar la propiedad.')
+    })
+}
+},
+mounted() {
+this.obtenerPropiedades()
+}
+})
+app.mount('body')
+</script>
+
+
+</div>
+<div id="idfooter">
+</div>
+<script src="js/headerfooter.js"></script>
+<script src="js/contacto.js"></script>
+
+</body>
+
+</html>

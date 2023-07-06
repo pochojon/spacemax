@@ -14,6 +14,7 @@ let spmxmenu=`
             <a href="nosotros.html"><i class="fa-solid fa-user-tie"></i> Nosotros</a>
             <a href="propiedades.html"><i class="fa-solid fa-building"></i> Propiedades</a>
             <a href="contacto.html"><i class="fa-solid fa-address-card"></i> Contacto</a>
+            <a href="tpofinal.html"><i class="fa-solid fa-cart-shopping"></i> CRUD </a>
         </div>
 
 `

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listado de Propiedades</title>
+    <script src="https://kit.fontawesome.com/ae62f2f4bd.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech&family=Share+Tech+Mono&display=swap"
+        rel="stylesheet">
+    <link rel="shortcut icon" href="img/spmax70.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/estilostpf.css">
+</head>
+
+<body>
+
+    <div class="padre">
+        <header class="header">
+            <div id="idmenu">
+            </div>
+
+            <div class="texto-principal">
+                <h1>Listado de Propiedades</h1>
+
+            </div>
+
+
+            <table id="listaprop">
+                <thead>
+                    <tr>
+                        <th align="left">Código</th>
+                        <th align="left">Nombre</th>
+                        <th align="left">Planeta</th>
+                        <th align="left">Operacion</th>
+                        <th align="left">Descripción</th>
+                        <th align="right">Cantidad</th>
+                        <th align="right">Precio</th>
+                    </tr>
+                </thead>
+                <tbody id="tablaPropiedades">
+                </tbody>
+            </table>
+
+            <div class="contenedor-centrado">
+                <a href="tpofinal.html">Volver</a>
+            </div>
+
+            <script>
+                const URL = "https://tpofspacemax.pythonanywhere.com/"
+                // Realizamos la solicitud GET al servidor para obtener todos los productos
+                fetch(URL + 'propiedades')
+                    .then(function (response) {
+                        if (response.ok) {
+                            return response.json() // Parseamos la respuesta JSON
+                        } else {
+                            throw new Error('Error al obtener las propiedades.')
+                        }
+                    })
+                    .then(function (data) {
+                        var tablaPropiedades = document.getElementById('tablaPropiedades')
+
+                        // Iteramos sobre los productos y agregamos filas a la tabla
+                        data.forEach(function (propiedad) {
+                            var fila = document.createElement('tr')
+                            fila.innerHTML = '<td>' + propiedad.codigo + '</td>' +
+                                '<td>' + propiedad.nombre + '</td>' +
+                                '<td>' + propiedad.planeta + '</td>' +
+                                '<td>' + propiedad.operacion + '</td>' +
+                                '<td>' + propiedad.descripcion + '</td>' +
+                                '<td align="right">' + propiedad.cantidad + '</td>' +
+                                '<td align="right">&nbsp; &nbsp;&nbsp; &nbsp;' + propiedad.precio + '</td>'
+                            tablaPropiedades.appendChild(fila)
+                        })
+                    })
+                    .catch(function (error) {
+                        console.log('Error:', error)
+                        alert('Error al obtener las propiedades.')
+                    })
+            </script>
+
+
+    </div>
+    <div id="idfooter">
+    </div>
+    <script src="js/headerfooter.js"></script>
+    <script src="js/contacto.js"></script>
+</body>
+
+</html>

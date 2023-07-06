@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portafolio</title>
+  <script src="https://unpkg.com/vue@next"></script>
+  <script src="https://kit.fontawesome.com/ae62f2f4bd.js" crossorigin="anonymous"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  <link rel="shortcut icon" href="img/spmax70.png" type="image/x-icon">
+  <link rel="stylesheet" href="css/estilostpf.css">
+</head>
+
+<body>
+
+  <div class="padre">
+    <header class="header">
+      <div id="idmenu">
+      </div>
+
+      <div class="texto-principal">
+        <h1>Portafolio de Inversiones</h1>
+      </div>
+
+      <div id="app">
+
+        <table id="listaport">
+          <thead>
+            <tr>
+              <th align="left">Código</th>
+              <th align="left">Nombre</th>
+              <th align="left">Planeta</th>
+              <th align="left">Operacion</th>
+              <th align="left">Descripción</th>
+              <th align="right">Cantidad</th>
+              <th align="right">Precio</th>
+              <th align="right">Portafolio</th>
+
+            </tr>
+          </thead>
+          <tbody>
+            <tr v-for="propiedad in propiedades" :key="propiedad.codigo">
+              <td>{{ propiedad.codigo }}</td>
+              <td>{{ propiedad.nombre }}</td>
+              <td>{{ propiedad.planeta }}</td>
+              <td>{{ propiedad.operacion }}</td>
+              <td>{{ propiedad.descripcion }}</td>
+              <td align="right">{{ propiedad.cantidad }}</td>
+              <td align="right">&nbsp; &nbsp; {{ propiedad.precio }}</td>
+              <td>
+                <button @click="agregarAlPortafolio(propiedad)">&nbsp;&nbsp;<b>+</b>&nbsp;&nbsp;</button>
+                <button @click="restarDelPortafolio(propiedad)">&nbsp;&nbsp;<b>-</b>&nbsp;&nbsp;</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div v-if="mostrarPortafolio">
+          
+          <table id="muestraport">
+        
+            <thead>
+              
+              <tr>
+
+                <th align="left">Código</th>
+                <th align="left">Nombre</th>
+                <th align="left">Planeta</th>
+                <th align="left">Operacion</th>
+                <!--<th align="left">Descripción</th>-->
+                <th align="right">Cantidad</th>
+                <th align="right">Precio</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr v-for="item in portafolio" :key="item.codigo">
+                <td>{{ item.codigo }}</td>
+                <td>{{ item.nombre }}</td>
+                <td>{{ item.planeta }}</td>
+                <td>{{ item.operacion }}</td>
+                <!--<<td>{{ item.descripcion }}</td>-->
+               <td align="right">{{ item.cantidad }}</td>
+                <td align="right">&nbsp; &nbsp; {{ item.precio }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div v-if="!mostrarPortafolio" class="contenedor-centrado">
+          <button @click="obtenerPortafolio">Mostrar Portafolio</button>
+        </div>
+
+        <div class="contenedor-centrado">
+          <a href="tpofinal.html">Volver</a>
+        </div>
+      </div>
+
+      <script>
+        const URL = "https://tpofspacemax.pythonanywhere.com/"
+
+        const app = Vue.createApp({
+          data() {
+            return {
+              propiedades: [],
+              mostrarPortafolio: false,
+              portafolio: [],
+            }
+          },
+          created() {
+            this.obtenerPropiedades()
+          },
+          methods: {
+            obtenerPropiedades() {
+              fetch(URL + 'propiedades')
+                .then(response => response.json())
+                .then(data => {
+                  this.propiedades = data
+                })
+                .catch(error => {
+                  console.error(URL + 'propiedades', error)
+                  alert('Error al obtener las propiedades.')
+                })
+            },
+
+            agregarAlPortafolio(propiedad) {
+              fetch(URL + 'portafolio', {
+                method: 'POST',
+                headers: {
+                  'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                  codigo: propiedad.codigo,
+                  cantidad: 1, // Agregamos una unidad al Portafolio
+                }),
+              })
+                .then(response => response.json())
+                .then(data => {
+                  alert(data.message)
+                })
+                .catch(error => {
+                  console.error('Error al agregar la propiedad al Portafolio:', error)
+                  alert('Error al agregar la propiedad al portafolio.')
+                })
+            },
+
+            restarDelPortafolio(propiedad) {
+              fetch(URL + 'portafolio', {
+                method: 'DELETE',
+                headers: {
+                  'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                  codigo: propiedad.codigo,
+                  cantidad: 1, // Restamos una unidad del Portafolio
+                }),
+              })
+                .then(response => response.json())
+                .then(data => {
+                  alert(data.message)
+                })
+                .catch(error => {
+                  console.error('Error al restar la propiedad del Portafolio:', error)
+                  alert('Error al restar la propiedad del Portafolio.')
+                })
+            },
+            obtenerPortafolio() {
+              fetch(URL + 'portafolio')
+                .then(response => response.json())
+                .then(data => {
+                  this.portafolio = data
+                  this.mostrarPortafolio = true
+                })
+                .catch(error => {
+                  console.error('Error al obtener el portafolio:', error)
+                  alert('Error al obtener el portafolio.')
+                })
+            },
+          },
+        })
+        app.mount('#app')
+      </script>
+
+
+  </div>
+  <div id="idfooter">
+  </div>
+  <script src="js/headerfooter.js"></script>
+  <!--<script src="js/contacto.js"></script>-->
+
+
+</body>
+
+</html>

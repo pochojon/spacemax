@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agregar propiedad</title>
+    <script src="https://kit.fontawesome.com/ae62f2f4bd.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech&family=Share+Tech+Mono&display=swap"
+        rel="stylesheet">
+    <link rel="shortcut icon" href="img/spmax70.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/estilostpf.css">
+</head>
+
+<body>
+
+    <div class="padre">
+        <header class="header">
+            <div id="idmenu">
+            </div>
+
+
+            <div class="texto-principal">
+                <h1>Agregar Propiedades al Catalogo</h1>
+
+            </div>
+
+
+
+            <form id="formulario">
+                <label for="codigo">Código:</label>
+                <input type="text" id="codigo" name="codigo" required><br>
+
+                <label for="imagen">Imagen:</label>
+                <input type="text" id="imagen" name="imagen" required><br>
+
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required><br>
+
+                <label for="planeta">Planeta:</label>
+                <input type="text" id="planeta" name="planeta" required><br>
+
+                <label for="operacion">Operacion:</label>
+                <input type="text" id="operacion" name="operacion" required><br>
+
+                <label for="descripcion">Descripción:</label>
+                <input type="text" id="descripcion" name="descripcion" required><br>
+
+                <label for="cantidad">Cantidad:</label>
+                <input type="number" id="cantidad" name="cantidad" required><br>
+
+                <label for="precio">Precio:</label>
+                <input type="number" step="0.01" id="precio" name="precio" required><br>
+
+                <button type="submit">Agregar Producto</button>
+                <a href="tpofinal.html">Volver</a>
+            </form>
+            <script>
+                const URL = "https://tpofspacemax.pythonanywhere.com/"
+                // Capturamos el evento de envío del formulario
+                document.getElementById('formulario').addEventListener('submit', function (event) {
+                    event.preventDefault() // Evitamos que se recargue la página
+
+                    // Obtenemos los valores del formulario
+                    var codigo = document.getElementById('codigo').value
+                    var imagen = document.getElementById('imagen').value
+                    var nombre = document.getElementById('nombre').value
+                    var planeta = document.getElementById('planeta').value
+                    var operacion = document.getElementById('operacion').value
+                    var descripcion = document.getElementById('descripcion').value
+                    var cantidad = document.getElementById('cantidad').value
+                    var precio = document.getElementById('precio').value
+
+                    // Creamos un objeto con los datos del producto
+                    var propiedad = {
+                        codigo: codigo,
+                        imagen: imagen,
+                        nombre: nombre,
+                        planeta: planeta,
+                        operacion: operacion,
+                        descripcion: descripcion,
+                        cantidad: cantidad,
+                        precio: precio
+                    }
+                    console.log(propiedad)
+                    // Realizamos la solicitud POST al servidor
+                    fetch(URL + 'propiedades', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(propiedad)
+                    })
+                        .then(function (response) {
+                            if (response.ok) {
+                                return response.json() // Parseamos la respuesta JSON
+                            } else {
+                                throw new Error('Error al agregar la propiedad.')
+                            }
+                        })
+                        .then(function (data) {
+                            alert('Propiedad agregado correctamente.')
+                            document.getElementById('codigo').value = ""
+                            document.getElementById('imagen').value = ""
+                            document.getElementById('nombre').value = ""
+                            document.getElementById('planeta').value = ""
+                            document.getElementById('operacion').value = ""
+                            document.getElementById('descripcion').value = ""
+                            document.getElementById('cantidad').value = ""
+                            document.getElementById('precio').value = ""
+                        })
+                        .catch(function (error) {
+                            console.log('Error:', error)
+                            alert('Error al agregar la propiedad.')
+                        })
+                })
+            </script>
+
+
+
+
+    </div>
+    <div id="idfooter">
+    </div>
+    <script src="js/headerfooter.js"></script>
+    <script src="js/contacto.js"></script>
+</body>
+
+</html>
